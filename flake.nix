@@ -21,6 +21,7 @@
           gumbo
           mujs
           zlib.dev
+          zig
         ];
 
         shellHook = ''

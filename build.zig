@@ -12,10 +12,10 @@ fn addMupdfDeps(exe: *std.Build.Step.Compile, target: std.Target) void {
         exe.addLibraryPath(.{ .cwd_relative = "/home/linuxbrew/.linuxbrew/lib" });
 
         const linux_libs = [_][]const u8{
-            "mupdf-third", "harfbuzz",
-            "freetype",    "jbig2dec",
-            "jpeg",        "openjp2",
-            "gumbo",       "mujs",
+            "mupdf",    "harfbuzz",
+            "freetype", "jbig2dec",
+            "jpeg",     "openjp2",
+            "gumbo",    "mujs",
         };
         for (linux_libs) |lib| exe.linkSystemLibrary(lib);
     }
