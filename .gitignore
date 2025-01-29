@@ -9,6 +9,7 @@
 # Cheers!
 # -andrewrk
 
+.direnv
 .zig-cache/
 zig-out/
 /release/
