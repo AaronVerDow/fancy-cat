@@ -23,10 +23,6 @@
           zlib.dev
           zig
         ];
-
-        shellHook = ''
-          echo "Development environment with required libraries is ready!"
-        '';
       };
     };
 }
