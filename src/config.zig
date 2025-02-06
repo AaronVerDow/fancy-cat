@@ -8,7 +8,8 @@ pub const KeyMap = struct {
     pub const scroll_right = .{ .key = 'l', .modifiers = .{} };
     pub const zoom_in = .{ .key = 'i', .modifiers = .{} };
     pub const zoom_out = .{ .key = 'o', .modifiers = .{} };
-    pub const quit = .{ .key = 'c', .modifiers = .{ .ctrl = true } };
+    pub const sigint = .{ .key = 'c', .modifiers = .{ .ctrl = true } };
+    pub const quit = .{ .key = 'q', .modifiers = .{} };
 };
 
 /// File monitor will be used to watch for changes to files and rerender them
