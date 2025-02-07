@@ -9,7 +9,8 @@ pub const KeyMap = struct {
     pub const zoom_in = .{ .key = 'i', .modifiers = .{} };
     pub const zoom_out = .{ .key = 'o', .modifiers = .{} };
     pub const go_to_page = .{ .key = 'g', .modifiers = .{} };
-    pub const quit = .{ .key = 'c', .modifiers = .{ .ctrl = true } };
+    pub const sigint = .{ .key = 'c', .modifiers = .{ .ctrl = true } };
+    pub const quit = .{ .key = 'q', .modifiers = .{} };
 };
 
 /// File monitor will be used to watch for changes to files and rerender them

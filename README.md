@@ -45,6 +45,9 @@ apt install \
 ```
 > [!IMPORTANT]  
 > On some Linux distributions (e.g., Fedora, Arch), replace `mupdf-third` with `mupdf` in ``build.zig`` to compile successfully.
+
+For NixOS use [this package](https://github.com/AaronVerDow/nix/tree/main/pkgs/fancy-cat).
+
 ### Build
 1. Fetch dependencies:
 ```sh

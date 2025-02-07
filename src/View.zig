@@ -130,7 +130,7 @@ fn resetCurrentPage(self: *Self) void {
 fn handleKeyStroke(self: *Self, key: vaxis.Key) !void {
     const km = config.KeyMap;
     // non reload keys
-    if (key.matches(km.quit.key, km.quit.modifiers)) {
+    if (key.matches(km.quit.key, km.quit.modifiers) or key.matches(km.sigint.key, km.sigint.modifiers)) {
         self.should_quit = true;
         return;
     }
