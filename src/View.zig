@@ -159,12 +159,12 @@ fn handleKeyStroke(self: *Self, key: vaxis.Key) !void {
     } else if (key.matches(km.scroll_right.key, km.scroll_right.modifiers)) {
         self.pdf_handler.scroll(.Right);
 
-    // enter goto page mode
+        // enter goto page mode
     } else if (key.matches(km.go_to_page.key, km.go_to_page.modifiers)) {
         self.is_changing_page = true;
-        self.change_page_num == 0;
+        self.change_page_num = 0;
 
-    // tally up number presses
+        // tally up number presses
     } else if (key.codepoint >= 48 and key.codepoint <= 57) {
         const num: i32 = key.codepoint - 48;
         if (self.change_page_num == 0) {
@@ -173,8 +173,8 @@ fn handleKeyStroke(self: *Self, key: vaxis.Key) !void {
             self.change_page_num = (self.change_page_num * 10) + num;
         }
 
-    // switch to the page
-    } else if (key.matches(km.go_to_page.key, km.go_to_page.modifiers) and self.is_changing_page) {
+        // switch to the page
+    } else if (key.matches(km.enter.key, km.enter.modifiers) and self.is_changing_page) {
         self.is_changing_page = false;
         const change_to = self.change_page_num - 1;
         self.change_page_num = 0;
