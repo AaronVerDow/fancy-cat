@@ -35,6 +35,7 @@ total_pages: u16,
 current_page_number: u16,
 path: []const u8,
 zoom: f32,
+size: f32,
 y_offset: f32,
 x_offset: f32,
 y_center: f32,
@@ -75,6 +76,7 @@ pub fn init(allocator: std.mem.Allocator, path: []const u8, initial_page: ?u16) 
         .current_page_number = current_page_number,
         .path = path,
         .zoom = 0,
+        .size = 0,
         .y_offset = 0,
         .x_offset = 0,
         .y_center = 0,
@@ -123,9 +125,11 @@ pub fn renderPage(
         @as(f32, @floatFromInt(window_height)) / bound.y1,
     );
 
+    self.size = scale * config.General.size;
+
     // initial zoom
     if (self.zoom == 0) {
-        self.zoom = scale * config.General.size;
+        self.zoom = self.size;
     }
     self.zoom = @max(self.zoom, config.General.zoom_min); // minimum zoom
 
