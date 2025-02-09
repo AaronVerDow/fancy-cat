@@ -27,7 +27,7 @@ pub const General = struct {
     // 1 is the whole screen
     pub const size: f32 = 0.90;
     // minimum zoom
-    pub const zoom_min: f32 = 0.20;
+    pub const zoom_min: f32 = 1.0;
     // percentage
     pub const zoom_step: f32 = 0.25;
     // pixels
