@@ -11,7 +11,9 @@ pipeline {
 		sh '''
 		    pwd
 		    cd pkgs/fancy-cat
-		    nix-shell -p nurl --run './dirty_update.sh $GIT_COMMIT'
+		    nix-shell -p nurl jq --run './dirty_update.sh $GIT_COMMIT'
+		    git config --local user.email "jenkins@verdow.lan"
+		    git config --local user.name "Jenkins"
 		    git add .
 		    git commit -m "auto update fancy-cat"
 		    git status
