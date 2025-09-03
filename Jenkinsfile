@@ -3,7 +3,7 @@ pipeline {
     stages {
 	stage('Pull Nix') {
 	    steps {
-		git changelog: false, credentialsId: '329fefc4-6b34-4c35-941a-ba5fd1736773', poll: false, url: 'https://github.com/AaronVerDow/nix', branch: main
+		git changelog: false, credentialsId: '329fefc4-6b34-4c35-941a-ba5fd1736773', poll: false, url: 'https://github.com/AaronVerDow/nix', branch: 'main'
 	    }
 	}
 	stage('Update') {
