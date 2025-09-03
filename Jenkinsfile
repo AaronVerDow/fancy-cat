@@ -33,6 +33,7 @@ pipeline {
 		    git add .
 		    git commit -m "auto update fancy-cat"
 		    git status
+		    git push
 		'''
 	    }
 	}
