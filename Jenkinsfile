@@ -39,10 +39,10 @@ pipeline {
 	stage('Push') {
 	    steps {
 		sshagent(['329fefc4-6b34-4c35-941a-ba5fd1736773']) {
-		  sh '''
-		    git status
-		    git push origin master"
-		  '''
+		    sh '''
+			git status
+			git push origin master
+		    '''
 		}
 	    }
 	}
