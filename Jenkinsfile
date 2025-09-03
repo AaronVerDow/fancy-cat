@@ -3,7 +3,9 @@ pipeline {
     stages {
 	stage('Checkout Nix Repo') {
 	    steps {
-		git credentialsId: '329fefc4-6b34-4c35-941a-ba5fd1736773', poll: false, url: 'https://github.com/AaronVerDow/nix'
+		dir('nix') {
+		    git credentialsId: '329fefc4-6b34-4c35-941a-ba5fd1736773', poll: false, url: 'https://github.com/AaronVerDow/nix'
+		}
 	    }
 	}
 	stage('Test') {
