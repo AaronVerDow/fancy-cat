@@ -12,6 +12,20 @@ pipeline {
 		    pwd
 		    cd pkgs/fancy-cat
 		    nix-shell -p nurl jq --run './dirty_update.sh $GIT_COMMIT'
+		    '''
+	    }
+	}
+	stage('Test') {
+	    steps {
+		sh '''
+		    cd pkgs/fancy-cat
+		    nix build
+		'''
+	    }
+	}
+	stage('Commit') {
+	    steps {
+		sh '''
 		    git config --local user.email "jenkins@verdow.lan"
 		    git config --local user.name "Jenkins"
 		    git add .
