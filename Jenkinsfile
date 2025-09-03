@@ -26,6 +26,8 @@ pipeline {
 	stage('Commit') {
 	    steps {
 		sh '''
+		    cd pkgs/fancy-cat
+		    git status
 		    git config --local user.email "jenkins@verdow.lan"
 		    git config --local user.name "Jenkins"
 		    git add .
