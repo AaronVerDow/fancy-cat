@@ -11,7 +11,7 @@ pipeline {
 		sh '''
 		    pwd
 		    cd pkgs/fancy-cat
-		    nix-shell -p nurl --run './dirty_update.sh ${env.GIT_COMMIT}'
+		    nix-shell -p nurl --run './dirty_update.sh $GIT_COMMIT'
 		    git add .
 		    git commit -m "auto update fancy-cat"
 		    git status
