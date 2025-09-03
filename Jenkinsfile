@@ -3,8 +3,9 @@ pipeline {
     stages {
 	stage('Test') {
 	    steps {
-		sh 'cd nix; git status'
-		sh 'find'
+		echo "Commit: ${env.GIT_COMMIT}"
+		echo "Revision: $SVN_REVISION"
+		echo "Commit ID: $GIT_COMMIT"
 	    }
 	}
     }
