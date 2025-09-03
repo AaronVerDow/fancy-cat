@@ -9,9 +9,9 @@ pipeline {
 	stage('Update') {
 	    steps {
 		sh '''
-		    find
-		    cd nix/pkgs/fancy-cat
-		    ./dirty_update.sh ${env.GIT_COMMIT}
+		    pwd
+		    cd pkgs/fancy-cat
+		    nix-shell -p nurl --run './dirty_update.sh ${env.GIT_COMMIT}'
 		    git add .
 		    git commit -m "auto update fancy-cat"
 		    git status
