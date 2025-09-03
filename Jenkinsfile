@@ -33,8 +33,17 @@ pipeline {
 		    git add .
 		    git commit -m "auto update fancy-cat"
 		    git status
-		    git push
 		'''
+	    }
+	}
+	stage('Push') {
+	    steps {
+		sshagent(['329fefc4-6b34-4c35-941a-ba5fd1736773']) {
+		  sh '''
+		    git status
+		    git push origin master"
+		  '''
+		}
 	    }
 	}
     }
