@@ -18,8 +18,7 @@ pipeline {
 	stage('Test') {
 	    steps {
 		sh '''
-		    cd pkgs/fancy-cat
-		    nix build
+		    nix build .#nixosConfigurations.games.config.system.build.toplevel
 		'''
 	    }
 	}
