@@ -10,7 +10,7 @@ pipeline {
 	    steps {
 		sh '''
 		    pwd
-		    cd pkgs/fancy-cat
+		    cd pkgs/my_fancy-cat
 		    nix-shell -p nurl jq --run './dirty_update.sh $GIT_COMMIT'
 		    '''
 	    }
@@ -25,7 +25,7 @@ pipeline {
 	stage('Commit') {
 	    steps {
 		sh '''
-		    cd pkgs/fancy-cat
+		    cd pkgs/my_fancy-cat
 		    git status
 		    git config --local user.email "jenkins@verdow.lan"
 		    git config --local user.name "Jenkins"
